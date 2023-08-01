@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class='header'>
+      <div>Welcome to <%= title %></div>
+    </div>
+
+    <div class='container'>
+      <!-- Form section -->
+      <div class='form'>
+        <div class='form-group'>
+          <label class='form-input' for='file'>Image to Classify</label>
+          <div class='browse'>
+            Browse
+
+            <input type='file' id='file' name='file' accept='image/jpeg,image/png' />
+          </div>
+        </div>
+        <div class='img-preview hidden' id='preview'></div>
+        <div class='action-btns'>
+          <div class='btn' id='classify'>Classify</div>
+          <div class='btn btn-cancel' id='reset'>Reset</div>
+        </div>
+      </div>
+
+      <div class='hr'></div>
+
+      <!-- Result section -->
+      <div class='footer'>
+        <div class='result-container'>
+          <div class='hidden' id='labels'>
+            <div id='label-list'></div>
+          </div>
+          <div class='error hidden' id='error'></div>
+        </div>
+        <div class='highlight'><b>Note:</b> If you see an alert that starts with <i>Unrecoverable Error:</i>, then it means that you have not returned the response as given in the instructions!</div>
+      </div>
+    </div>
+
+    <script src='/javascripts/jquery.min.js'></script>
+    <script src='/javascripts/app.js'></script>
+  </body>
+</html>
