@@ -21,8 +21,8 @@ async function detectLabels(imageBuffer) {
     Image: {
       Bytes: imageBuffer,
     },
-    MaxLabels: 10, // Maximum number of labels to return
-    MinConfidence: 75, // Minimum confidence level for labels to be included
+    MaxLabels: 3, // Maximum number of labels to return
+    MinConfidence: 90, // Minimum confidence level for labels to be included
   };
 
   try {
@@ -45,11 +45,9 @@ router.post("/classify", async function (req, res, next) {
     }
 
     const imageBuffer = req.files.file.data;
-    console.log('eeeeeee', req)
 
     // Call the detectLabels function to get the labels
     const labels = await detectLabels(imageBuffer);
-
 
     // Return the labels in JSON format
     res.json({ labels });
